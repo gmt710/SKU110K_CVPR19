@@ -131,3 +131,4 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 `
 python -u ./train.py csv               
 `
+First three step I've changed.The second step you need modify yourself.

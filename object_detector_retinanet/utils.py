@@ -40,9 +40,11 @@ def create_folder(path):
 
 def root_dir():
     if platform.system() == 'Linux':
-        return os.path.join(os.getenv('HOME'), 'Documents', 'SKU110K')
+        return os.path.abspath('/opt/sku110k/SKU110K_CVPR19/SKU110K/')
+        # return os.path.join(os.getenv('HOME'), 'Documents', 'SKU110K')
     elif platform.system() == 'Windows':
-        return os.path.abspath('C:/Users/{}/Documents/SKU110K/'.format(os.getenv('username')))
+        return os.path.abspath('F:/Datasets/SKU110K/')
+        # return os.path.abspath('C:/Users/{}/Documents/SKU110K/'.format(os.getenv('username')))
 
 
 def image_path():

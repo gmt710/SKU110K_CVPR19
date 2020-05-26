@@ -21,8 +21,8 @@ import cv2
 from PIL import Image
 
 from .transform import change_transform_origin
-
-
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 def read_image_bgr(path):
     """ Read an image in BGR format.
 

@@ -118,16 +118,16 @@ The results are saved in CSV format in the "results" folder and drawn in "res_im
 }
 ```
 
-##our repeat step for training               
-###1.copy ./object_detector_retinanet/keras_retinanet_bin/train.py class_mappings.csv to ./
-###2.modify ./object_detector_retinanet/utils.py line42 or 45 to our own datapath
-###3.add 2 lines in (./object_detector_retinanet/utils/image.py line24-25 issues23
+## our repeat step for training               
+### 1.copy ./object_detector_retinanet/keras_retinanet_bin/train.py class_mappings.csv to ./
+### 2.modify ./object_detector_retinanet/utils.py line42 or 45 to our own datapath
+### 3.add 2 lines in (./object_detector_retinanet/utils/image.py line24-25 issues23
 ```
 from PIL import ImageFile                         
 ImageFile.LOAD_TRUNCATED_IMAGES = True   
 ```
-###4.in our datapath/annotations/ delete the first line of csv file
-###5.run at ./             
+### 4.in our datapath/annotations/ delete the first line of csv file
+### 5.run at ./             
 `
 python -u ./train.py csv               
 `

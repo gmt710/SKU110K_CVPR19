@@ -131,4 +131,29 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 `
 python -u ./train.py csv               
 `
+### 6.train 2nd at ./
+```
+cp ./object_detector_retinanet/keras_retinanet/bin/train_iou.py ./
+python -u ./train_iou.py --weights ./SKU110K/SKU110K_CVPR19/SKU110K/snapshot/Tue_May_26_08_17_14_2020/resnet50_csv_05.h5 csv
+
+```
+
+### 7. copy ./object_detector_retinanet/keras_retinanet_bin/predict.py to ./
+### 8.test run at ./
+may we'll mat this(“ 'dict' object has no attribute 'iteritems' ”):
+```
+vim ./object_detector_retinanet/keras_retinanet/utils/CollapsingMoG.py
+line 190
+change:
+for j, t_vals in clusters.iteritems():
+to:
+for j, t_vals in clusters.items():
+```
+test
+``` 
+python -u ./predict.py csv  "./SKU110K/snapshot/Thu_May_28_02:36:24_2020/iou_resnet50_csv_01.h5" --hard_score_rate=0.5 
+```
+we'll get detection result.
+
+
 First three step I've changed.The second step you need modify yourself.
